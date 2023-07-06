@@ -17,6 +17,18 @@ Ejemplo de salida:
 9 es impar
 10 es par
 ```
+
+# Solucion
+```javascript
+for(let contador = 1; contador <= 10; contador++){
+    if(contador % 2 === 0){
+        console.log(contador, "es par");
+    } else {
+        console.log(contador, "es impar");
+    }
+}
+```
+
 ## Actividad 2
 
 Guardar un numero en una variable. Utiliza un bucle for para recorrer los números del 1 al 10 y muestra la tabla de multiplicar del número guardado. Utiliza un condicional if para verificar si el número es válido (entre 1 y 10).
@@ -41,7 +53,6 @@ La tabla del 5 es la siguiente
 5 x 10 = 50
 ```
 
-
 Ejemplo de entrada:
 
 ```javascript
@@ -50,4 +61,18 @@ Numero guardado : 12
 Ejemplo de salida:
 ```javascript
 El numero no es valido, debe ser un numero entre 1 y 10
+```
+# Solucion
+```javascript
+let numero = 5;
+
+if(numero >= 1 && numero <= 10){
+    console.log(`La tabla del ${numero} es:`);
+    for(let contador = 1; contador <= 10; contador++){
+        let resultado = numero * contador;
+        console.log(`${numero} x ${contador} = ${resultado}`);
+    }
+} else {
+    console.log("El numero no es valido, debe ser un numero entre 1 y 10");
+}
 ```
