@@ -18,7 +18,7 @@ Ejemplo de salida:
 10 es par
 ```
 
-# Solucion
+## Solucion
 ```javascript
 for(let contador = 1; contador <= 10; contador++){
     if(contador % 2 === 0){
@@ -62,7 +62,7 @@ Ejemplo de salida:
 ```javascript
 El numero no es valido, debe ser un numero entre 1 y 10
 ```
-# Solucion
+## Solucion
 ```javascript
 let numero = 5;
 
@@ -75,4 +75,78 @@ if(numero >= 1 && numero <= 10){
 } else {
     console.log("El numero no es valido, debe ser un numero entre 1 y 10");
 }
+```
+
+## Actividad 3
+
+Encontrar la palabra mas larga de una frase.
+Crear una funcion llamada encontrarPalabraMasLarga que reciba como parametro una frase (string) y usar el metodo split [(más informacion)](https://www.w3schools.com/jsref/jsref_split.asp#) para dividir la frase en un array de palabras. Luego, recorrer el array y encontrar la palabra mas larga y retornarla o mostrarla por consola.
+
+Ejemplo de entrada:
+
+```javascript
+encontrarPalabraMasLarga("El elefante es un animal muy grande");
+```
+Ejemplo de salida:
+```javascript
+"elefante"
+```
+
+## Actividad 4
+
+Crear dos objetos llamados persona1 y persona2 con los siguientes datos: nombre, edad.
+El primero con el nombre Pedro y edad 15 y el segundo con el nombre Ana y edad 28.
+Crear una funcion llamada esMayorDeEdad que reciba como parametro un objeto y muestre por consola el siguiente mensaje "NOMBRE es mayor de edad" en caso de que sea mayor o "NOMBRE no es mayor de edad" en caso de que no.
+
+Ejemplo de entrada:
+```javascript
+esMayorDeEdad(persona1);
+esMayorDeEdad(persona2);
+```
+Ejemplo de salida:
+```javascript
+"Pedro no es mayor de edad"
+"Ana es mayor de edad"
+```
+
+## Actividad 5
+
+Crear dos objetos, persona1 y persona2, ambos con la propiedad nombre y anioDeNacimiento.
+Crear una funcion agregarEdad que reciba como parametro una persona. En base a la fecha de nacimiento, agregar a esta persona la propiedad edad con el numero correspondiente.
+Al terminar mostrar por consola estos dos objetos
+
+Ejemplo de entrada:
+```javascript
+agregarEdad(persona1);
+agregarEdad(persona2);
+```
+Ejemplo de salida:
+```javascript
+persona1 = {nombre: "Pedro", anioDeNacimiento: 2005, edad: 15}
+persona2 = {nombre: "Ana", anioDeNacimiento: 1992, edad: 28}
+```
+## Actividad 6
+
+Filtrar mayores de edad. Crear una funcion llamada filtrarMayoresDeEdad que reciba como parametro un array de objetos personas y retorne un array con las personas mayores de edad.
+
+Ejemplo de entrada:
+```javascript
+filtrarMayoresDeEdad([persona1, persona2]);
+```
+Ejemplo de salida:
+```javascript
+[{nombre: "Ana", edad: 28}]
+```
+
+## Actividad 7
+
+Repetir la actividad 5 pero aplicando el metodo forEach. Crear una funcion agregarEdad que reciba como parametro un array de personas. En base a la fecha de nacimiento, agregar a cada persona la propiedad edad con el numero correspondiente.
+
+Ejemplo de entrada:
+```javascript
+agregarEdad([persona1, persona2]);
+```
+Ejemplo de salida:
+```javascript
+[{nombre: "Pedro", anioDeNacimiento: 2005, edad: 15}, {nombre: "Ana", anioDeNacimiento: 1992, edad: 28}]
 ```
