@@ -108,3 +108,45 @@ Ejemplo de salida:
 "Pedro no es mayor de edad"
 "Ana es mayor de edad"
 ```
+
+## Actividad 5
+
+Crear dos objetos, persona1 y persona2, ambos con la propiedad nombre y anioDeNacimiento.
+Crear una funcion agregarEdad que reciba como parametro una persona. En base a la fecha de nacimiento, agregar a esta persona la propiedad edad con el numero correspondiente.
+Al terminar mostrar por consola estos dos objetos
+
+Ejemplo de entrada:
+```javascript
+agregarEdad(persona1);
+agregarEdad(persona2);
+```
+Ejemplo de salida:
+```javascript
+persona1 = {nombre: "Pedro", anioDeNacimiento: 2005, edad: 15}
+persona2 = {nombre: "Ana", anioDeNacimiento: 1992, edad: 28}
+```
+## Actividad 6
+
+Filtrar mayores de edad. Crear una funcion llamada filtrarMayoresDeEdad que reciba como parametro un array de objetos personas y retorne un array con las personas mayores de edad.
+
+Ejemplo de entrada:
+```javascript
+filtrarMayoresDeEdad([persona1, persona2]);
+```
+Ejemplo de salida:
+```javascript
+[{nombre: "Ana", edad: 28}]
+```
+
+## Actividad 7
+
+Repetir la actividad 5 pero aplicando el metodo forEach. Crear una funcion agregarEdad que reciba como parametro un array de personas. En base a la fecha de nacimiento, agregar a cada persona la propiedad edad con el numero correspondiente.
+
+Ejemplo de entrada:
+```javascript
+agregarEdad([persona1, persona2]);
+```
+Ejemplo de salida:
+```javascript
+[{nombre: "Pedro", anioDeNacimiento: 2005, edad: 15}, {nombre: "Ana", anioDeNacimiento: 1992, edad: 28}]
+```
