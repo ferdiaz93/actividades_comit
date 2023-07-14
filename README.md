@@ -150,3 +150,11 @@ Ejemplo de salida:
 ```javascript
 [{nombre: "Pedro", anioDeNacimiento: 2005, edad: 15}, {nombre: "Ana", anioDeNacimiento: 1992, edad: 28}]
 ```
+
+## Actividad 8
+
+Crear un archivo html con su estructura basica. Crear un elemento ul con el id lista.
+Crear un boton que al hacer click ejecute una funcion, esta funcion deberia crear un elemento li y agregarlo al ul. El elemento li deberia contener un numero que se va a ir incrementando en 1 cada vez que se haga click en el boton.
+
+extra:
+En vez de usar un numero para el contendio de cada li, usar un prompt [(mas info)](https://www.w3schools.com/jsref/met_win_prompt.asp#) para pedirle al usuario que ingrese un texto y mostrarlo en el li.
