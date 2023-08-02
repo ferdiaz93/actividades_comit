@@ -1,30 +1,3 @@
-// function pedirDatos(){
-//     console.log("Promesa creada");
-//     return new Promise(function (resolve, reject){
-//         setTimeout(function(){
-//             let misDatos = {name: "fernando", edad: 29};
-//             if(misDatos.edad > 18){
-//                 resolve(misDatos)
-//             } else {
-//                 reject("No es mayor de edad");
-//             }
-//         }, 5000);
-//     })
-// }
-
-
-
-// miPromesa
-//     .then((respuesta) => {
-//         console.log("resuelta", respuesta);
-//     })
-//     .catch((respuesta) => {
-//         console.log("rechazada", respuesta);
-//     })
-//     .finally(() => {
-//         console.log("promesa terminada")
-//     })
-
 const ulElement = document.getElementById('lista');
 const ulElementAlbums = document.getElementById('lista-albums');
 const sectionGrilla = document.getElementById('grilla-fotos');
