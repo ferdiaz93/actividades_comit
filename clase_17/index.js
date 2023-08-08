@@ -5,7 +5,7 @@ const mensajeEl = document.getElementById('mensaje');
 
 fomulario.addEventListener('submit', function(event){
     event.preventDefault();
-    // capturar los inputs
+    // capturar los valores de los inputs
     let title = fomulario['title'].value;
     let body = fomulario['body'].value;
     let userId = fomulario['userId'].value;
@@ -35,12 +35,11 @@ function mostrarMensaje(texto, todoOk){
     const span = document.createElement('span');
     span.innerText = texto;
     if(todoOk){
+        // -Si la consulta sale bien mostrar un mensaje en verde 
         span.setAttribute('class', 'success');
     } else {
+        // -Si la consulta sale mal, mostrar un mensaje en rojo debajo del formulario
         span.setAttribute('class', 'error');
     }
     mensajeEl.appendChild(span);
 }
-// capturar los valores de los inputs
-// -Si la consulta sale bien mostrar un mensaje en verde 
-// -Si la consulta sale mal, mostrar un mensaje en rojo debajo del formulario
