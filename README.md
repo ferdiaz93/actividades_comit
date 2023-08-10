@@ -158,3 +158,5 @@ Crear un boton que al hacer click ejecute una funcion, esta funcion deberia crea
 
 extra:
 En vez de usar un numero para el contendio de cada li, usar un prompt [(mas info)](https://www.w3schools.com/jsref/met_win_prompt.asp#) para pedirle al usuario que ingrese un texto y mostrarlo en el li.
+
+Actualizado
