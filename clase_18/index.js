@@ -35,6 +35,7 @@
 // console.log(calculadora.sumar(1, 2));
 
 const funciones = require('./tareas');
+
 funciones.mostrarTareas();
 funciones.agregarTarea({description: "pasear al perro", done: false});
 funciones.agregarTarea({description: "salir a correr", done: false});
