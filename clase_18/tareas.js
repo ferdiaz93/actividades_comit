@@ -12,7 +12,7 @@ function vaciarLista() {
     tareas = [];
 }
 
-// eliminar la ultima tarea
-// eliminar una tarea especifica usando el indice
+// eliminar la ultima tarea (usar metodo pop)
+// eliminar una tarea especifica usando el indice (usar metodo splice)
 
 module.exports = { mostrarTareas, agregarTarea, vaciarLista }
