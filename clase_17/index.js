@@ -1,45 +1,44 @@
-// -Crear un formulario con los inputs “titulo”, “body” y “userId” con un boton enviar. -> HTML
-// -Darle al formulario el evento submit (addEventListener)
-const fomulario = document.getElementById('formulario');
-const mensajeEl = document.getElementById('mensaje');
+const express = require("express");
+const app = express();
+// -Crear un array de objetos que contenga ID, NOMBRE, APELLIDO, PROFESION
+let usuarios = [
+    {id: 1, nombre: "Juan", apellido: "Perez", profesion: "Programador"},
+    {id: 2, nombre: "Pedro", apellido: "Diaz", profesion: "Contador"},
+    {id: 3, nombre: "Carlos", apellido: "Diaz", profesion: "Programador"},
+    {id: 4, nombre: "Ana", apellido: "Diaz", profesion: "Abogada"},
+];
+// -Crear un endpoint /usuarios que filtre por parametros (profesion) y responda un json con los usuarios filtrados
+// para filtrar usar el metodo filter de los arrays
 
-fomulario.addEventListener('submit', function(event){
-    event.preventDefault();
-    // capturar los valores de los inputs
-    let title = fomulario['title'].value;
-    let body = fomulario['body'].value;
-    let userId = fomulario['userId'].value;
-    console.log({title, body, userId});
-    fetch('https://jsonplaceholder.typicode.com/posts', {
-        method: 'POST',
-        headers: { 
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            title: title,
-            body: body,
-            userId: userId,
-        })
-    })
-    .then(response => {
-        console.log(response);
-        mostrarMensaje('Salio todo bien', true)
-    })
-    .catch(error => {
-        console.log(error)
-        mostrarMensaje('Salio todo mal', false)
-    })
+// -Crear un endpoint /usuarios/:id que filtre por ID del usuario y devuelva un json con los datos de ese usuario
+// para filtrar usar el metodo find de los arrays
+
+app.get('/', function(request, response){
+    console.log("Recibimos una peticion");
+});
+
+app.get('/perfil/:id', function(req, res){
+    // PARAMS
+    const id = req.params.id;
+    console.log(id)
+    console.log("Recibimos una peticion en PERFIL");
+    res.send("Hola " + id);
+});
+
+app.get('/usuarios', function(req, res){
+    // QUERY
+    const { profesion } = req.query;
+    const usuariosFiltrados = usuarios.filter((usuario) => usuario.profesion.toLowerCase() === profesion.toLowerCase())
+    res.json(usuariosFiltrados);
+});
+
+app.get('/usuarios/:id', function(req, res){
+    // PARAMS
+    const { id } = req.params;
+    const userFiltered = usuarios.find((usuario) => usuario.id === parseInt(id));
+    res.json(userFiltered);
+});
+
+app.listen(3000, () => {
+    console.log("Servidor corriendo");
 })
-
-function mostrarMensaje(texto, todoOk){
-    const span = document.createElement('span');
-    span.innerText = texto;
-    if(todoOk){
-        // -Si la consulta sale bien mostrar un mensaje en verde 
-        span.setAttribute('class', 'success');
-    } else {
-        // -Si la consulta sale mal, mostrar un mensaje en rojo debajo del formulario
-        span.setAttribute('class', 'error');
-    }
-    mensajeEl.appendChild(span);
-}

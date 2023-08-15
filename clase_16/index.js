@@ -1,131 +1,44 @@
-// function pedirDatos(){
-//     console.log("Promesa creada");
-//     return new Promise(function (resolve, reject){
-//         setTimeout(function(){
-//             let misDatos = {name: "fernando", edad: 29};
-//             if(misDatos.edad > 18){
-//                 resolve(misDatos)
-//             } else {
-//                 reject("No es mayor de edad");
-//             }
-//         }, 5000);
-//     })
+// destructuring
+// const persona = {
+//     nombre: 'Juan',
+//     apellido: 'Perez',
+//     edad: 30,
 // }
 
+// const { nombre, edad } = persona;
+// console.log(nombre, edad);
+
+// const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// const [nueve] = numeros;
+
+// console.log(nueve);
+
+// const calculadora = require('./calculadora');
+// console.log(calculadora.sumar(1, 2));
+// console.log(calculadora.restar(1, 2));
 
 
-// miPromesa
-//     .then((respuesta) => {
-//         console.log("resuelta", respuesta);
-//     })
-//     .catch((respuesta) => {
-//         console.log("rechazada", respuesta);
-//     })
-//     .finally(() => {
-//         console.log("promesa terminada")
-//     })
+// -Crear dos archivos, index.js y tareas.js
+// -En tareas.js  -> Definir una variable con un array vacio y las funciones :
 
-const ulElement = document.getElementById('lista');
-const ulElementAlbums = document.getElementById('lista-albums');
-const sectionGrilla = document.getElementById('grilla-fotos');
+// mostrarTareas() => muestra por consola todas las tareas
+// agregarTarea(tarea) => agrega una tarea, que viene por parametro, al array(push) con la siguiente estructura:
+// tarea = {description: 'pasear al perro', done: false}
 
-async function obtenerUsuarios() {
-    try {
-        let response = await fetch('https://jsonplaceholder.typicode.com/users');
-        let usuarios = await response.json();
-        console.log(usuarios);
-        usuarios.forEach(usuario => crearItemDeUsuario(usuario));
-    } catch(error){
-        console.log(error);
-    }
-}
+// vaciarLista() => vacia el array
 
-function obtenerUsuariosPromesa(){
-    console.log('iniciando fetch');
-    fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => response.json())
-    .then((usuarios) => {
-        console.log(usuarios);
-        // usuarios.forEach(usuario => crearItemDeUsuario(usuario));
-    })
-    .catch(error => {
+// -Exportar estas funciones => module.exports = { sumar, restar }
+// -Importar estas funciones en el archivo index.js y usarlas => require('')
 
-    })
-    console.log('fetch finalizado')
-}
+// Codigo de ejemplo:
+// const calculadora = require('./utilidades/calculadora');
+// console.log(calculadora.sumar(1, 2));
 
-obtenerUsuarios();
+const funciones = require('./tareas');
 
-function crearItemDeUsuario(usuario){
-    let liElement = document.createElement('li');
-    let buttonElement = document.createElement('button');
-    buttonElement.innerText = usuario.name;
-    
-    liElement.addEventListener('click', function(){
-        console.log(usuario.id)
-        mostrarAlbumsDelUsuario(usuario.id)
-    })
-    
-    liElement.appendChild(buttonElement);
-    ulElement.appendChild(liElement);
-
-}
-
-async function mostrarAlbumsDelUsuario(idUser){
-    try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/albums?userId=' + idUser)
-        const albums = await response.json();
-        console.log(albums);
-        ulElementAlbums.innerHTML = "";
-        albums.forEach(function(album){
-            let li = document.createElement('li');
-            li.innerText = album.title;
-            ulElementAlbums.appendChild(li);
-            li.addEventListener('click', function() {
-                console.log(album.id);
-                mostrarFotosDelAlbum(album.id);
-            })
-        })
-    } catch(error){
-        console.error(error);
-    }
-}
-
-async function mostrarFotosDelAlbum(idAlbum){
-    try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/photos?albumId=' + idAlbum)
-        const photos = await response.json();
-        photos.forEach(function(photo){
-            const article = document.createElement('article');
-            const img = document.createElement('img');
-            const span = document.createElement('span');
-            
-            span.innerText = photo.title;
-            img.setAttribute('src', photo.url);
-            article.appendChild(img);
-            article.appendChild(span);
-            sectionGrilla.appendChild(article);
-        });
-    } catch(error){
-        console.error(error);
-    }
-}
-
-async function enviarDatos(){
-    console.log('iniciando POST')
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            title: 'test',
-            body: 'hola',
-            userId: 1,
-        })
-    });
-    const result = await response.json();
-    console.log(result);
-}
-
-enviarDatos();
+funciones.mostrarTareas();
+funciones.agregarTarea({description: "pasear al perro", done: false});
+funciones.agregarTarea({description: "salir a correr", done: false});
+funciones.mostrarTareas();
+funciones.vaciarLista();
+funciones.mostrarTareas();

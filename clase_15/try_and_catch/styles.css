@@ -1,0 +1,22 @@
+.content{
+    display: flex;
+}
+
+.lista{
+    padding: 0px 20px;
+    border: 1px solid black;
+}
+
+.grilla {
+    display: flex;
+    flex-wrap: wrap;
+}
+.grilla article {
+    display: flex;
+    flex-direction: column;
+}
+
+.grilla article img {
+    width: 50%;
+    height: 50%;
+}
