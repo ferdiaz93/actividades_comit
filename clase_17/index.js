@@ -15,20 +15,26 @@ let usuarios = [
 
 app.get('/', function(request, response){
     console.log("Recibimos una peticion");
+    response.send("Hola mundo");
 });
 
 app.get('/perfil/:id', function(req, res){
     // PARAMS
     const id = req.params.id;
-    console.log(id)
+    console.log(req.params)
     console.log("Recibimos una peticion en PERFIL");
     res.send("Hola " + id);
 });
 
 app.get('/usuarios', function(req, res){
     // QUERY
-    const { profesion } = req.query;
-    const usuariosFiltrados = usuarios.filter((usuario) => usuario.profesion.toLowerCase() === profesion.toLowerCase())
+    const { profesion, edad } = req.query;
+    // const profesion = req.query.profesion;
+    // const edad = req.query.edad;
+    console.log(req.query)
+    const usuariosFiltrados = usuarios.filter((usuario) => {
+        return usuario.profesion.toLowerCase() === profesion.toLowerCase()
+    })
     res.json(usuariosFiltrados);
 });
 
