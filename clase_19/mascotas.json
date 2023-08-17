@@ -1,0 +1,34 @@
+[
+    {
+        "nombre": "Ciro",
+        "animal": "Perro",
+        "edad": 3,
+        "perdido": false
+    },
+    {
+        "nombre": "Liam",
+        "animal": "Gato",
+        "edad": 5,
+        "perdido": false
+    },
+    {
+        "nombre": "Ruffi",
+        "animal": "Gato",
+        "edad": 6,
+        "perdido": true
+    },
+    {
+        "nombre": "Tyson",
+        "animal": "Perro",
+        "edad": 8,
+        "perdido": true
+    },
+    {
+        "name": "Bola de nieve",
+        "edad": 4
+    },
+    {
+        "name": "test",
+        "edad": 10
+    }
+]

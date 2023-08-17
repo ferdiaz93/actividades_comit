@@ -1,0 +1,40 @@
+[
+    {
+        "nombre": "Juan",
+        "apellido": "Perez",
+        "edad": 25,
+        "genero": "Masculino"
+    },
+    {
+        "nombre": "Maria",
+        "apellido": "Gonzalez",
+        "edad": 30,
+        "genero": "Femenino"
+    },
+    {
+        "nombre": "Pedro",
+        "apellido": "Rodriguez",
+        "edad": 40,
+        "genero": "Masculino"
+    },
+    {
+        "nombre": "pepe",
+        "edad": 40
+    },
+    {
+        "nombre": "pepe",
+        "edad": 40
+    },
+    {
+        "nombre": "pepe",
+        "edad": 40
+    },
+    {
+        "nome": "Juan",
+        "email": "juan@gmail.com"
+    },
+    {
+        "name": "pablo",
+        "email": "pablo@gmail.com"
+    }
+]
