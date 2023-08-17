@@ -28,5 +28,13 @@
     {
         "nombre": "pepe",
         "edad": 40
+    },
+    {
+        "nome": "Juan",
+        "email": "juan@gmail.com"
+    },
+    {
+        "name": "pablo",
+        "email": "pablo@gmail.com"
     }
 ]
