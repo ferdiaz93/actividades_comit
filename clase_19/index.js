@@ -4,6 +4,7 @@ const fs = require("fs/promises");
 
 // controllers
 const userController = require("./controllers/UserController");
+const petController = require("./controllers/PetController");
 
 //middlewares
 app.use(express.json());
@@ -14,36 +15,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/usuarios', userController.getUsers);
-
-app.post('/usuarios', async (req, res) => {
-    const body = req.body;
-    const data = await fs.readFile("./usuarios.json", "utf-8");
-    const usuarios = JSON.parse(data);
-
-    usuarios.push(body);
-
-    const error = await fs.writeFile("./usuarios.json", JSON.stringify(usuarios));
-    if (error) { res.json({ error: "No se pudo guardar el usuario" }) }
-    res.json({ mensaje: "Usuario guardado" });
-})
+app.post('/usuarios', userController.createUser);
 
 // -Crear un archivo JSON que contenga un array de Mascotas(cada mascota debe tener un ‘nombre’,  ‘animal’, ‘edad’, ‘perdido’)
 
 // -Crear un endpoint GET /mascotas que filtre por parametros (animal/perdido) y responda un json con las mascotas filtradas
-app.get('/mascotas', async (req, res) => {
-    const animal = req.query.animal;
-    const perdido = req.query.perdido;
-    const data = await fs.readFile("./mascotas.json", "utf-8");
-    let mascotas = JSON.parse(data);
-    if (animal) {
-        mascotas = mascotas.filter((mascota) => mascota.animal === animal);
-    }
-    if (perdido) {
-        let estaPerdido = perdido === "true" ? true : false;
-        mascotas = mascotas.filter((mascota) => mascota.perdido === estaPerdido);
-    }
-    res.json(mascotas);
-})
+app.get('/mascotas', petController.getPets);
 // -Crear un endpoint GET /mascotas/:nombre que filtre por nombre de la mascota y devuelva un json con los datos de esa mascota
 app.get('/mascotas/:nombre', async (req, res) => {
     const nombre = req.params.nombre;

@@ -1,11 +1,19 @@
 GET http://localhost:8080/usuarios
 
 ###
-GET http://localhost:8080/mascotas?perdido=false&animal=Perro
+GET http://localhost:8080/mascotas?animal=Perro
 
 ###
 GET http://localhost:8080/mascotas/Ciro
 
+###
+POST http://localhost:8080/usuarios
+content-type: application/json
+
+{
+    "name": "Fer",
+    "apellido": "diaz"
+}
 ###
 POST http://localhost:8080/mascotas
 content-type: application/json
