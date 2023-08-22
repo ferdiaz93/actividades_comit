@@ -7,6 +7,20 @@ async function getPets(req, res){
     res.json(mascotas);
 }
 
+async function getPet(req, res){
+    const nombre = req.params.nombre;
+    const mascota = await PetModel.getPet(nombre);
+    res.json(mascota);
+}
+
+async function createPet(req, res){
+    const body = req.body; // req.body = {nombre: "nombre", animal: "animal", edad: "edad", perdido: "perdido"}
+    const message = await PetModel.createPet(body); // llamamos a la funcion que guarda la mascota
+    res.json({ mensaje: message }); // respondemos con un mensaje
+}
+
 module.exports = {
-    getPets
+    getPets,
+    getPet,
+    createPet
 }
