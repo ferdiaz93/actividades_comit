@@ -5,7 +5,7 @@ const app = express();
 
 //middlewares
 app.use(express.static(path.join(__dirname, './client')));
-app.use(cors({}));
+app.use(cors());
 
 app.get('/contacto', (req, res) => {
     const filePath = path.join(__dirname, './client/index.html')
