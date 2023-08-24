@@ -10,7 +10,7 @@ app.use(express.static(path.join(__dirname, './client')));
 app.use(cors());
 
 app.get('/', navigationController.goContacto);
-app.get('/nostros', (req, res) => {
+app.get('/nosotros', (req, res) => {
     const filePath = path.join(__dirname, './client/nosotros.html')
     res.sendFile(filePath);
 });
