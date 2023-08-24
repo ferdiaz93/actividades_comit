@@ -3,14 +3,19 @@ const path = require('path');
 const cors = require('cors');
 const app = express();
 
+const navigationController = require('./server/controllers/NavigationController')
+
 //middlewares
 app.use(express.static(path.join(__dirname, './client')));
 app.use(cors());
 
-app.get('/contacto', (req, res) => {
-    const filePath = path.join(__dirname, './client/index.html')
+app.get('/', navigationController.goContacto);
+app.get('/nostros', (req, res) => {
+    const filePath = path.join(__dirname, './client/nosotros.html')
     res.sendFile(filePath);
 });
+
+
 // Crear rutas que devuelvan distintas secciones html.
 // (Home, Sobre Nosotros,Contacto)
 // Todos los html deben tener redirecciones a las demas rutas de los html.
