@@ -1,0 +1,24 @@
+[
+    {
+        "name": "Pikachu",
+        "url_img_1": "URL",
+        "url_img_2": "URL",
+        "url_img_3": "URL",
+        "url_img_4": "URL",
+        "url_img_5": "URL",
+        "url_img_6": "URL",
+        "url_img_7": "URL",
+        "url_img_8": "URL"
+    },
+    {
+        "name": "Charmander",
+        "url_img_1": "URL",
+        "url_img_2": "URL",
+        "url_img_3": "URL",
+        "url_img_4": "URL",
+        "url_img_5": "URL",
+        "url_img_6": "URL",
+        "url_img_7": "URL",
+        "url_img_8": "URL"
+    }
+]

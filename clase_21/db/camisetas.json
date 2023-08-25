@@ -1,0 +1,20 @@
+[
+    {
+        "modelo": "Adidas",
+        "talla": 40,
+        "club": "Barcelona",
+        "precio": 100,
+        "url_img": "URL",
+        "stock": 20,
+        "anio": 2019
+    },
+    {
+        "modelo": "Adidas",
+        "talla": 40,
+        "club": "Real Madrid",
+        "precio": 100,
+        "url_img": "URL",
+        "stock": 15,
+        "anio": 2020
+    }
+]
