@@ -1,0 +1,22 @@
+GET http://localhost:8000/users
+
+###
+POST http://localhost:8000/user
+content-type: application/json
+
+{
+    "name": "martin",
+    "email": "asdasdasdasd",
+    "age": 30
+}
+
+###
+PUT http://localhost:8000/user/64ee778b9e4b36bd1759ce72
+content-type: application/json
+
+{
+    "name": "carolo"
+}
+
+###
+DELETE http://localhost:8000/user/64ee778b9e4b36bd1759ce72

@@ -1,7 +1,11 @@
+GET http://localhost:8000/users
+
+###
 POST http://localhost:8000/user
 content-type: application/json
 
 {
+    "name": "fernando",
     "email": "asdasdasdasd",
     "age": 30
 }
