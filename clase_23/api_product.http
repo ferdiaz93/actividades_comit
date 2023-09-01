@@ -1,0 +1,24 @@
+GET http://localhost:8000/products
+
+###
+POST http://localhost:8000/product
+content-type: application/json
+
+{
+    "name": "Mesa",
+    "description": "lorem ipsum",
+    "color": "red",
+    "price": 100,
+    "quantity": 10
+}
+
+###
+PUT http://localhost:8000/product/64ee778b9e4b36bd1759ce72
+content-type: application/json
+
+{
+    "name": "carolo"
+}
+
+###
+DELETE http://localhost:8000/product/64ee778b9e4b36bd1759ce72

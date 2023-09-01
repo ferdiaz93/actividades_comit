@@ -3,6 +3,7 @@ const express = require('express');
 
 const User = require('./db/schemas/UserSchema');
 const userController = require('./controllers/userController');
+const productController = require('./controllers/productController');
 const { conectarDB, desconectarDB } = require('./db/conection')
 const PORT = process.env.PORT || 8000;
 const app = express();
@@ -13,6 +14,20 @@ app.get('/users', userController.getAll);
 app.post('/user', userController.create);
 app.put("/user/:id", userController.update);
 app.delete("/user/:id", userController.deleteUser);
+
+
+app.get('/products', productController.getAll);
+app.post('/product', productController.create);
+app.put("/product/:id", productController.update);
+app.delete("/product/:id", productController.deleteProduct);
+
+
+// - Copiar esta carpeta (clase 23)
+// - Instalar dependencias con el comando 'npm install'
+// - Crear el schema de Producto
+// - Crear el controlador de Producto
+// - Crear los endpoints de Producto
+// - TOMAR DE REFERENCIA EL CODIGO DE USUARIO
 
 app.listen(PORT, () => {
     console.log("Servidor corriendo en el puerto " + PORT);
