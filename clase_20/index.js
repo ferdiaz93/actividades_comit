@@ -9,11 +9,8 @@ const navigationController = require('./server/controllers/NavigationController'
 app.use(express.static(path.join(__dirname, './client')));
 app.use(cors());
 
-app.get('/', navigationController.goContacto);
-app.get('/nosotros', (req, res) => {
-    const filePath = path.join(__dirname, './client/nosotros.html')
-    res.sendFile(filePath);
-});
+app.get('/', navigationController.goIndex);
+app.get('/nosotros', navigationController.goNosotros);
 
 
 // Crear rutas que devuelvan distintas secciones html.

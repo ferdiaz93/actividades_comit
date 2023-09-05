@@ -1,10 +1,16 @@
 const path = require('path');
 
-function goContacto(req, res){
+function goIndex(req, res){
     const filePath = path.join(__dirname, '../../client/index.html')
     res.sendFile(filePath);
 }
 
+function goNosotros(req, res){
+    const filePath = path.join(__dirname, '../../client/nosotros.html')
+    res.sendFile(filePath);
+}
+
 module.exports = {
-    goContacto
+    goIndex,
+    goNosotros
 }
